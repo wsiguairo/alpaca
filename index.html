@@ -3,13 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpaca</title>
+    
+    <!-- Open Graph tags para WhatsApp/Facebook -->
+    <meta property="og:title" content="🦙 Monitoreo de Alpacas 2026">
+    <meta property="og:description" content="Sistema de monitoreo de afectación por frío en alpacas - Sierra Sur">
+    <meta property="og:image" content="https://wsiguairo.github.io/alpaca/alpaca.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wsiguairo.github.io/alpaca/">
+    <meta property="og:site_name" content="Monitoreo Alpacas 2026">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🦙 Monitoreo de Alpacas 2026">
+    <meta name="twitter:description" content="Sistema de monitoreo de afectación por frío - Sierra Sur">
+    <meta name="twitter:image" content="https://wsiguairo.github.io/alpaca/alpaca.png">
+    
+    <title>Monitoreo de Alpacas 2026</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .alpaca-img {
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 10px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .btn-colab {
+            background: #FFD700;
+            color: #333;
+        }
+        .btn-app {
+            background: #667eea;
+        }
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body style="display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; background:#f0f0f0;">
-    <div style="text-align:center;">
-        <a href="alpaca.png" target="_blank">
-            <img src="alpaca.png" alt="Alpaca" style="max-width:100%; height:auto; border-radius:10px;">
+<body>
+    <div class="container">
+        <img src="alpaca.png" alt="Alpaca" class="alpaca-img">
+        <h1>🦙 Monitoreo de Alpacas 2026</h1>
+        <p class="subtitle">Sistema de monitoreo de afectación por frío - Sierra Sur</p>
+        
+        <a href="https://colab.research.google.com/github/wsiguairo/alpaca/blob/main/notebook.ipynb" class="btn btn-colab" target="_blank">
+            📓 Ver Código Colab
         </a>
+        
+        <a href="TU_URL_DE_GRADIO_AQUI" class="btn btn-app" target="_blank">
+            🚀 Acceder a la App
+        </a>
+        
+        <div class="info">
+            <p><strong>📊 Visualiza la gráfica actualizada del monitoreo de alpacas</strong></p>
+            <p>Fecha: <span id="fecha"></span></p>
+        </div>
     </div>
+    
+    <script>
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-PE', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    </script>
 </body>
 </html>
