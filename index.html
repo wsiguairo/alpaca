@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Open Graph tags para WhatsApp/Facebook -->
+    <!-- Open Graph tags para WhatsApp -->
     <meta property="og:title" content="🦙 Monitoreo de Alpacas 2026">
     <meta property="og:description" content="Sistema de monitoreo de afectación por frío en alpacas - Sierra Sur">
     <meta property="og:image" content="https://wsiguairo.github.io/alpaca/alpaca.png">
@@ -12,9 +12,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wsiguairo.github.io/alpaca/">
-    <meta property="og:site_name" content="Monitoreo Alpacas 2026">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="🦙 Monitoreo de Alpacas 2026">
     <meta name="twitter:description" content="Sistema de monitoreo de afectación por frío - Sierra Sur">
@@ -25,14 +23,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .container {
             background: white;
@@ -40,9 +35,11 @@
             padding: 40px;
             text-align: center;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         .alpaca-img {
-            max-width: 300px;
+            max-width: 400px;
             width: 100%;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -57,45 +54,50 @@
         }
         .button-container {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 20px 0;
+            margin: 30px 0;
         }
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 15px 25px;
+            gap: 10px;
+            padding: 16px 30px;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
+            flex: 1;
+            min-width: 200px;
+            max-width: 350px;
         }
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .btn-whatsapp {
-            background: #25D366;
+            background: #FF8C00;
             color: white;
         }
         .btn-update {
-            background: #6c757d;
-            color: white;
+            background: #e0e0e0;
+            color: #333;
         }
         .btn-senamhi {
-            background: #0d6efd;
-            color: white;
+            background: #e0e0e0;
+            color: #333;
         }
         .info {
             margin-top: 30px;
             padding: 20px;
-            background: #f5f5f5;
+            background: #f9f9f9;
             border-radius: 10px;
+            font-size: 14px;
+            color: #666;
         }
         .app-link {
             display: inline-block;
@@ -132,14 +134,14 @@
             </button>
         </div>
         
-        <!-- Enlace a la app -->
+        <!-- Enlace a la app de Hugging Face -->
         <a href="https://huggingface.co/spaces/wsiguairo/alpacas-2026" class="app-link" target="_blank">
             🚀 Acceder a la App Interactiva
         </a>
         
         <div class="info">
-            <p><strong>📊 Visualiza la gráfica actualizada del monitoreo de alpacas</strong></p>
-            <p>Fecha: <span id="fecha"></span></p>
+            <p><strong>📌 Nota:</strong> Al compartir por WhatsApp, se mostrará la vista previa con la imagen de alpaca.png</p>
+            <p style="margin-top: 10px;">Fecha: <span id="fecha"></span></p>
         </div>
     </div>
     
