@@ -47,26 +47,69 @@
             margin-bottom: 20px;
             border-radius: 10px;
         }
-        h1 { color: #333; margin-bottom: 10px; }
-        .subtitle { color: #666; margin-bottom: 30px; }
+        h1 { 
+            color: #333; 
+            margin-bottom: 10px; 
+        }
+        .subtitle { 
+            color: #666; 
+            margin-bottom: 30px; 
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
         .btn {
-            display: inline-block;
-            padding: 15px 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn-whatsapp {
             background: #25D366;
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 10px;
-            font-weight: bold;
-            transition: transform 0.3s;
         }
-        .btn:hover { transform: translateY(-3px); }
-        .btn-app { background: #667eea; }
+        .btn-update {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-senamhi {
+            background: #0d6efd;
+            color: white;
+        }
         .info {
             margin-top: 30px;
             padding: 20px;
             background: #f5f5f5;
             border-radius: 10px;
+        }
+        .app-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .app-link:hover {
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -76,8 +119,22 @@
         <h1>🦙 Monitoreo de Alpacas 2026</h1>
         <p class="subtitle">Sistema de monitoreo de afectación por frío - Sierra Sur</p>
         
-        <a href="https://huggingface.co/spaces/wsiguairo/alpacas-2026" class="btn btn-app" target="_blank">
-            🚀 Acceder a la App
+        <!-- 3 BOTONES -->
+        <div class="button-container">
+            <button class="btn btn-whatsapp" onclick="compartirWhatsApp()">
+                📱 Compartir en WhatsApp
+            </button>
+            <button class="btn btn-update" onclick="actualizarDatos()">
+                🔄 Actualizar Datos
+            </button>
+            <button class="btn btn-senamhi" onclick="verSenamhi()">
+                🌤️ Ver Reporte SENAMHI
+            </button>
+        </div>
+        
+        <!-- Enlace a la app -->
+        <a href="https://huggingface.co/spaces/wsiguairo/alpacas-2026" class="app-link" target="_blank">
+            🚀 Acceder a la App Interactiva
         </a>
         
         <div class="info">
@@ -87,11 +144,35 @@
     </div>
     
     <script>
+        // Mostrar fecha actual
         document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-PE', {
             day: 'numeric',
             month: 'long',
             year: 'numeric'
         });
+        
+        // Función Compartir en WhatsApp
+        function compartirWhatsApp() {
+            const fecha = new Date().toLocaleDateString('es-PE', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            const url = window.location.href;
+            const texto = `🦙 *Monitoreo de Alpacas 2026*\n\n📅 Fecha: ${fecha}\n\n📊 Visualiza la gráfica actualizada del monitoreo de alpacas en la Sierra Sur.\n\n🔗 ${url}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(texto)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Función Actualizar Datos
+        function actualizarDatos() {
+            location.reload();
+        }
+        
+        // Función Ver SENAMHI
+        function verSenamhi() {
+            window.open('https://www.gob.pe/institucion/senamhi/informes-publicaciones/7683884-monitoreo-de-confort-climatico-de-alpacas-febrero-2026', '_blank');
+        }
     </script>
 </body>
 </html>
